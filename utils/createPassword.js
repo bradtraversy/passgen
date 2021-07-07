@@ -12,7 +12,7 @@ const createPassword = (length = 8, hasNumbers = true, hasSymbols = true) => {
 }
 
 const generatePassword = (length, chars) => {
-  const random = crypto.randomBytes(length)
+  const random = crypto.randomBytes(Number(length))
   let password = ''
   
   for (let i = 0; i < length; i++) {
