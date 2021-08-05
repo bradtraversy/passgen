@@ -10,7 +10,7 @@ program.version('1.0.0').description('Simple Password Generator')
 
 program
   .option('-l, --length <number>', 'length of password', '8')
-  .option('-s, --save', 'save password to passwords.txt')
+  .option('-s, --save [string]', 'save password to passwords.txt')
   .option('-nn, --no-numbers', 'remove numbers')
   .option('-ns, --no-symbols', 'remove symbols')
   .parse()
@@ -22,7 +22,7 @@ const generatedPassword = createPassword(length, numbers, symbols)
 
 // Save to file
 if (save) {
-  savePassword(generatedPassword)
+  savePassword(generatedPassword, save)
 }
 
 // Copy to clipboard
